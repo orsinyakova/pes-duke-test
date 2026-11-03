@@ -292,6 +292,15 @@ h1 em{font-style:normal;font-weight:inherit}
 .duke-card-title{font:400 36px/1.1 Anticva,Georgia,serif;letter-spacing:-.02em}
 .duke-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:14px;line-height:1.5}
 .duke-card-mark{display:grid;place-items:center;flex:none;width:64px;height:64px;border:1px solid var(--forest);border-radius:50%;font:400 28px/1 Anticva,Georgia,serif}
+.loyalty-promotions{margin:0;min-width:0}
+.loyalty-promotions-toggle{display:none;list-style:none;cursor:pointer}
+.loyalty-promotions-toggle::-webkit-details-marker{display:none}
+.loyalty-promotions-toggle svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.loyalty-promotions-hide{display:none}
+.loyalty-promotions[open] .loyalty-promotions-show{display:none}
+.loyalty-promotions[open] .loyalty-promotions-hide{display:inline}
+.loyalty-promotions[open] .loyalty-promotions-toggle svg{transform:rotate(180deg)}
+.loyalty-promotions-toggle:focus-visible{outline:3px solid #8F563F;outline-offset:5px}
 .loyalty-offers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;list-style:none;margin:0;padding:0}
 .loyalty-offer{min-width:0;display:flex}
 .loyalty-offer-card{display:flex;flex-direction:column;width:100%;background:var(--card-peach);border-radius:24px;padding:24px}
@@ -305,7 +314,7 @@ h1 em{font-style:normal;font-weight:inherit}
 @media(max-width:1199px){.loyalty-feature{padding:40px;gap:40px}.loyalty-offers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:1099px){.loyalty-section{padding-block:80px}.loyalty-heading{font-size:56px}}
 @media(max-width:899px){.loyalty-feature{grid-template-columns:minmax(0,1fr);gap:40px}.loyalty-feature-copy{max-width:none}.duke-card-preview{width:min(100%,340px)}}
-@media(max-width:767px){.loyalty-section{padding-block:64px;scroll-margin-top:16px}.loyalty-header{margin-bottom:32px}.loyalty-heading{font-size:40px;line-height:1.15}.loyalty-intro{font-size:16px;margin-top:16px}.loyalty-feature{padding:24px;border-radius:20px;gap:32px;margin-bottom:16px}.loyalty-feature h3{font-size:44px;margin-top:20px}.loyalty-feature-description{font-size:16px}.loyalty-feature-actions{gap:12px;margin-top:24px}.loyalty-book{width:100%;padding-inline:16px}.loyalty-contact{margin-inline:auto}.loyalty-feature-note{margin-top:16px}.duke-card-preview{padding:20px;gap:20px;transform:none;border-radius:16px;aspect-ratio:auto;min-height:220px}.duke-card-preview img{width:112px}.duke-card-title{font-size:32px}.duke-card-bottom{gap:12px}.duke-card-mark{width:52px;height:52px;font-size:24px}.loyalty-offers{grid-template-columns:minmax(0,1fr);gap:16px}.loyalty-offer-card{padding:20px;border-radius:20px}.loyalty-offer-value{padding:20px;font-size:56px}.loyalty-offer h3{font-size:22px;margin-top:20px}.loyalty-offer p{font-size:16px}}
+@media(max-width:767px){.loyalty-promotions-toggle{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:16px 20px;border:1px solid var(--forest);border-radius:16px;background:var(--card-peach);color:var(--forest);font-size:16px;font-weight:600;line-height:1.5}.loyalty-promotions[open] .loyalty-offers{margin-top:16px}.loyalty-section{padding-block:64px;scroll-margin-top:16px}.loyalty-header{margin-bottom:32px}.loyalty-heading{font-size:40px;line-height:1.15}.loyalty-intro{font-size:16px;margin-top:16px}.loyalty-feature{padding:24px;border-radius:20px;gap:32px;margin-bottom:16px}.loyalty-feature h3{font-size:44px;margin-top:20px}.loyalty-feature-description{font-size:16px}.loyalty-feature-actions{gap:12px;margin-top:24px}.loyalty-book{width:100%;padding-inline:16px}.loyalty-contact{margin-inline:auto}.loyalty-feature-note{margin-top:16px}.duke-card-preview{padding:20px;gap:20px;transform:none;border-radius:16px;aspect-ratio:auto;min-height:220px}.duke-card-preview img{width:112px}.duke-card-title{font-size:32px}.duke-card-bottom{gap:12px}.duke-card-mark{width:52px;height:52px;font-size:24px}.loyalty-offers{grid-template-columns:minmax(0,1fr);gap:16px}.loyalty-offer-card{padding:20px;border-radius:20px}.loyalty-offer-value{padding:20px;font-size:56px}.loyalty-offer h3{font-size:22px;margin-top:20px}.loyalty-offer p{font-size:16px}}
 
 /* Reviews — one centered carousel, with bone-shaped rating marks. */
 .reviews-section{padding-block:96px;background:var(--forest);color:#F7F6F1;scroll-margin-top:24px;--review-olive:var(--forest);--review-muted:var(--muted-neutral);--review-surface:var(--page);--review-line:var(--neutral-line);--review-width:min(440px,calc(100vw - 96px))}
@@ -510,12 +519,15 @@ h1 em{font-style:normal;font-weight:inherit}
      <div class="duke-card-bottom"><span>Накопительная<br>карта Pes&nbsp;Duke</span><span class="duke-card-mark">5%</span></div>
     </div>
    </div>
-   <ul class="loyalty-offers" aria-label="Скидки и бонусы">
+   <details class="loyalty-promotions" open>
+    <summary class="loyalty-promotions-toggle" aria-controls="loyalty-offers"><span class="loyalty-promotions-show">Показать акции</span><span class="loyalty-promotions-hide">Скрыть акции</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+   <ul class="loyalty-offers" id="loyalty-offers" aria-label="Скидки и бонусы">
     <li class="loyalty-offer" data-loyalty-reveal><article class="loyalty-offer-card"><span class="loyalty-offer-value">10%</span><h3>Каждый десятый визит</h3><p>Каждое десятое посещение нашего салона со&nbsp;скидкой&nbsp;10%.</p></article></li>
     <li class="loyalty-offer" data-loyalty-reveal><article class="loyalty-offer-card"><span class="loyalty-offer-value">10%</span><h3>Щенкам до&nbsp;6&nbsp;месяцев</h3><p>Скидка 10% на&nbsp;уход для&nbsp;самых маленьких гостей салона.</p></article></li>
     <li class="loyalty-offer" data-loyalty-reveal><article class="loyalty-offer-card"><span class="loyalty-offer-value">500&nbsp;₽</span><h3>С&nbsp;другом дешевле</h3><p>Порекомендуйте наш салон знакомым и&nbsp;получите скидку 500&nbsp;₽ на&nbsp;одну услугу.</p></article></li>
     <li class="loyalty-offer" data-loyalty-reveal><article class="loyalty-offer-card"><span class="loyalty-offer-value">500&nbsp;₽</span><h3>За&nbsp;отзыв</h3><p>Поделитесь своим мнением о&nbsp;салоне на&nbsp;Яндекс&nbsp;Картах и&nbsp;получите скидку 500&nbsp;₽ на&nbsp;наши услуги.</p><a class="loyalty-review-link" href="https://yandex.ru/maps/org/pyosduke/190293664931/reviews/" target="_blank" rel="noopener">Оставить отзыв<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article></li>
    </ul>
+   </details>
   </div>
  </section>
  <section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
@@ -647,6 +659,14 @@ h1 em{font-style:normal;font-weight:inherit}
  menu.querySelectorAll('a').forEach(link => link.addEventListener('click',closeMenu));
  window.matchMedia('(min-width:1100px)').addEventListener('change',event => {if(event.matches&&menu.open)closeMenu();});
  const reducedMotion=window.matchMedia('(prefers-reduced-motion:reduce)');
+ const loyaltyPromotions=document.querySelector('.loyalty-promotions');
+ const loyaltyMobileView=window.matchMedia('(max-width:767px)');
+ let mobilePromotionsOpen=false;
+ function syncLoyaltyPromotions(){loyaltyPromotions.open=loyaltyMobileView.matches?mobilePromotionsOpen:true;}
+ loyaltyPromotions.addEventListener('toggle',()=>{if(loyaltyMobileView.matches)mobilePromotionsOpen=loyaltyPromotions.open;});
+ loyaltyMobileView.addEventListener('change',syncLoyaltyPromotions);
+ syncLoyaltyPromotions();
+
  const video=document.querySelector('#hero-video');
  const videoButton=document.querySelector('.video-control');
  video.muted=true;
