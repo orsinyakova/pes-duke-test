@@ -1,6 +1,6 @@
 /* Shared footer: logo colours, generous grid and an independent designer credit. */
-.site-footer{background:#2D4B36;color:#F7F6F1;padding:24px;font:400 16px/1.6 Manrope,Arial,sans-serif;scroll-margin-top:24px}
-.footer-panel{position:relative;isolation:isolate;overflow:hidden;max-width:1520px;margin-inline:auto;border-radius:48px;background:#B2BF9B;color:#234C34;padding:32px;min-height:0;display:grid;grid-template-columns:minmax(280px,1fr) minmax(0,1.8fr);column-gap:64px;row-gap:24px}
+.site-footer{background:var(--footer-bg,#2D4B36);color:#F7F6F1;padding:24px;font:400 16px/1.6 Manrope,Arial,sans-serif;scroll-margin-top:24px}
+.footer-panel{position:relative;isolation:isolate;overflow:hidden;max-width:1520px;margin-inline:auto;border-radius:48px;background:var(--footer-panel-bg,#B2BF9B);color:#234C34;padding:32px;min-height:0;display:grid;grid-template-columns:minmax(280px,1fr) minmax(0,1.8fr);column-gap:64px;row-gap:24px}
 .footer-watermark{position:absolute;z-index:-1;right:6%;bottom:72px;width:44%;max-width:600px;height:auto;opacity:.13;filter:url(#brand-ink);pointer-events:none;user-select:none}
 .footer-contact{min-width:0;max-width:320px}
 .footer-title{font:400 32px/1.2 Anticva,Georgia,serif;letter-spacing:-.02em;margin:0 0 16px;text-transform:uppercase}
@@ -20,7 +20,7 @@
 .designer-credit{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 12px;margin:0 auto;max-width:1520px;padding:24px 8px 0;font-size:14px;line-height:1.7;text-align:center}
 .designer-credit>span{display:inline-flex;align-items:center;gap:8px}
 .designer-credit svg{width:16px;height:16px;fill:#EAAB93;flex:none}
-.designer-credit a{font:400 24px/1.4 Anticva,Georgia,serif;letter-spacing:-.015em;padding:4px 0;border-bottom:1px solid #B2BF9B;transition:color .2s,border-color .2s}
+.designer-credit a{font:400 24px/1.4 Anticva,Georgia,serif;letter-spacing:-.015em;padding:4px 0;border-bottom:1px solid var(--footer-panel-bg,#B2BF9B);transition:color .2s,border-color .2s}
 .site-footer a:focus-visible{outline:3px solid #8F563F;outline-offset:5px}
 .designer-credit a:focus-visible{outline-color:#EAAB93}
 @media(hover:hover){.footer-nav a:hover,.footer-phone:hover,.footer-booking:hover{text-decoration:underline;text-underline-offset:5px}.footer-social:hover{background:#234C34;color:#F7F6F1;transform:translateY(-2px)}.designer-credit a:hover{color:#EAAB93;border-color:#EAAB93}}
