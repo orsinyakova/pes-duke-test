@@ -204,9 +204,10 @@ h1 em{font-style:normal;font-weight:inherit}
 .popular-photo{aspect-ratio:1;overflow:hidden;background:#EEECE2}
 .popular-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transition:transform .5s cubic-bezier(.2,.65,.3,1)}
 .popular-item:nth-child(2) .popular-photo img{object-position:70% 50%}
-.popular-photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;height:100%;padding:24px;background:#E9ECDD;color:var(--popular-ink)}
-.popular-cat-outline{width:min(68%,160px);height:auto;opacity:.75}
-.popular-photo-placeholder span{max-width:20ch;font-size:14px;line-height:1.5}
+.popular-item:nth-child(3) .popular-photo img{object-position:50% 40%}
+
+
+
 .popular-price{margin-top:16px;font-size:18px;font-weight:500;line-height:1.5;font-variant-numeric:tabular-nums}
 .popular-name{font:400 32px/1.2 Anticva,Georgia,serif;margin:28px 0 0;text-wrap:balance}
 .popular-description{flex:1;margin:16px auto 24px;max-width:35ch;font-size:16px;line-height:1.6;text-wrap:pretty}
@@ -233,7 +234,7 @@ h1 em{font-style:normal;font-weight:inherit}
 .quick-booking-note{margin:16px 0 0;text-align:center;font-size:14px;color:#57644F}.quick-booking a:focus-visible,.quick-booking button:focus-visible,.quick-booking select:focus-visible{outline:3px solid #8F563F;outline-offset:5px}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.popular-card:hover{transform:translateY(-4px)}.popular-card:hover .popular-photo img{transform:scale(1.025)}.popular-book:hover{transform:translateY(-1px)}}
 @media(max-width:1099px){.popular-section{padding-block:80px}.popular-heading{font-size:56px}.popular-toolbar{display:flex}.popular-grid{display:flex;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-padding-inline:0}.popular-grid::-webkit-scrollbar{display:none}.popular-item{flex:0 0 calc((100% - 24px)/2);scroll-snap-align:start}.popular-card{padding:20px 20px 28px}.popular-media{padding:56px 24px 20px}.popular-name{font-size:28px}}
-@media(max-width:767px){.popular-section{padding-block:64px;scroll-margin-top:16px}.popular-header{margin-bottom:32px}.popular-heading{font-size:40px;line-height:1.15}.popular-intro{font-size:16px;margin-top:16px}.popular-grid{gap:16px}.popular-item{flex-basis:92%}.popular-card{padding:16px 16px 24px;border-radius:20px}.popular-media{padding:48px 20px 16px}.popular-badge{top:16px;min-height:36px;padding:8px 20px 8px 16px}.popular-name{margin-top:24px;font-size:28px}.popular-price{font-size:16px;margin-top:16px}.popular-description{font-size:16px;margin-bottom:24px}.popular-nav{width:44px;height:44px;padding:11px}.popular-photo-placeholder{padding:16px;gap:12px}.popular-cat-outline{width:min(65%,140px)}.popular-photo-placeholder span{font-size:14px;max-width:16ch}.quick-booking{padding:24px}.quick-booking h2{font-size:32px}.quick-booking-intro{margin-bottom:24px}}
+@media(max-width:767px){.popular-section{padding-block:64px;scroll-margin-top:16px}.popular-header{margin-bottom:32px}.popular-heading{font-size:40px;line-height:1.15}.popular-intro{font-size:16px;margin-top:16px}.popular-grid{gap:16px}.popular-item{flex-basis:92%}.popular-card{padding:16px 16px 24px;border-radius:20px}.popular-media{padding:48px 20px 16px}.popular-badge{top:16px;min-height:36px;padding:8px 20px 8px 16px}.popular-name{margin-top:24px;font-size:28px}.popular-price{font-size:16px;margin-top:16px}.popular-description{font-size:16px;margin-bottom:24px}.popular-nav{width:44px;height:44px;padding:11px}.quick-booking{padding:24px}.quick-booking h2{font-size:32px}.quick-booking-intro{margin-bottom:24px}}
 
 /* Team — open portrait cards in the salon palette. */
 .team-section{padding-block:96px;background:#F0CBB9;color:var(--forest);--team-gap:24px;--team-per-view:4;scroll-margin-top:24px}
@@ -388,7 +389,7 @@ h1 em{font-style:normal;font-weight:inherit}
     </li>
     <li class="popular-item" data-popular-reveal>
      <article class="popular-card" aria-labelledby="popular-cats">
-      <figure class="popular-media"><span class="popular-badge">Для кошек</span><div class="popular-photo"><div class="popular-photo-placeholder" role="img" aria-label="Место для фотографии кошки на груминге"><svg class="popular-cat-outline" viewBox="0 0 160 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 75 36 31l31 23c9-3 17-3 26 0l31-23-4 44c10 11 16 24 16 37 0 26-25 40-56 40s-56-14-56-40c0-13 6-26 16-37Z"/><path d="m53 92 6-2 6 2m30 0 6-2 6 2m-34 21 7 5 7-5m-7 5v9m0 0c-6 4-10 4-14 0m14 0c6 4 10 4 14 0M38 111l-22-5m23 14-23 2m106-11 22-5m-23 14 23 2"/></svg><span>Фото кошки на&nbsp;груминге</span></div></div><figcaption class="popular-price">от 3 100 ₽</figcaption></figure>
+      <figure class="popular-media"><span class="popular-badge">Для кошек</span><div class="popular-photo"><img src="assets/services/cat-grooming.webp" width="960" height="1280" loading="lazy" decoding="async" alt="Пушистая трёхцветная кошка на груминг-столе"></div><figcaption class="popular-price">от 3 100 ₽</figcaption></figure>
       <h3 class="popular-name" id="popular-cats">Груминг кошек</h3>
       <p class="popular-description">Купание, вычёсывание и гигиена. Выберите подходящую процедуру для кошки или кота.</p>
       <a class="popular-book" href="https://n1254086.yclients.com/company/1146740/personal/select-services?o=" target="_blank" rel="noopener" data-booking-kind="cats" aria-haspopup="dialog" aria-controls="quick-booking" aria-label="Записаться: Груминг кошек">Записаться<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
