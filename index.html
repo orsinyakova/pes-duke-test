@@ -225,6 +225,41 @@ h1 em{font-style:normal;font-weight:inherit}
 @media(max-width:1099px){.team-section{--team-per-view:2;padding-block:80px}.team-heading{font-size:56px}.team-portrait--initial .team-portrait-content{font-size:180px}}
 @media(max-width:767px){.team-section{--team-gap:16px;--team-per-view:1.12;padding-block:64px;scroll-margin-top:16px}.team-header{margin-bottom:32px}.team-heading{font-size:40px;line-height:1.15}.team-intro{font-size:16px;line-height:1.6;margin-top:16px;max-width:34ch}.team-toolbar{margin-bottom:16px}.team-nav-button{width:44px;height:44px;padding:11px}.team-name{font-size:26px;margin-top:24px}.team-description{font-size:16px;max-width:28ch;margin-bottom:24px}.team-portrait--initial .team-portrait-content{font-size:clamp(120px,42vw,200px)}.team-link{gap:12px;padding-inline:20px}}
 
+/* Reviews — verified excerpts, light surfaces and a quiet three-column grid. */
+.reviews-section{padding-block:96px;background:#F7F6F1;color:#2D4B36;scroll-margin-top:24px;--review-olive:#67744C;--review-muted:#57644F;--review-surface:#ECEDE5;--review-line:#D2D7CB}
+.reviews-shell{width:calc(100% - var(--page-margin)*2);max-width:1440px;margin-inline:auto}
+.reviews-header{max-width:760px;margin:0 auto 48px;text-align:center}
+.reviews-heading{font:400 clamp(48px,5vw,72px)/1.12 Anticva,Georgia,serif;letter-spacing:-.025em;text-transform:uppercase;margin:0}
+.reviews-rating{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;margin-top:16px;font-size:14px;line-height:1.5}
+.reviews-rating-value{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.reviews-rating svg{width:20px;height:20px;fill:var(--review-olive)}
+.reviews-rating:hover{text-decoration:underline;text-underline-offset:5px}
+.reviews-intro{margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--review-muted);text-wrap:pretty}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;list-style:none;margin:0;padding:0}
+.review-item{display:flex;min-width:0}
+.review-card{display:flex;flex-direction:column;width:100%;min-height:288px;padding:32px;border-radius:8px;background:var(--review-surface);transition:transform .3s ease,background .3s ease}
+.review-meta{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.review-stars{display:flex;gap:4px;flex:none;color:var(--review-olive)}
+.review-stars svg{width:16px;height:16px;fill:currentColor}
+.review-meta time{font-size:14px;line-height:1.5;color:var(--review-muted);white-space:nowrap}
+.review-quote{flex:1;margin:24px 0 32px;font-size:16px;line-height:1.65;font-weight:400;text-wrap:pretty}
+.review-quote p{margin:0}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-initials{display:grid;place-items:center;flex:none;width:44px;height:44px;border:1px solid var(--review-line);border-radius:50%;color:var(--review-olive);font-size:14px;font-weight:600}
+.review-author-info{min-width:0}
+.review-author h3{font-size:16px;font-weight:600;line-height:1.5;margin:0;overflow-wrap:break-word}
+.review-source{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-bottom:-10px;font-size:14px;line-height:1.5;color:var(--review-muted)}
+.review-source svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.review-source:hover{color:#2D4B36;text-decoration:underline;text-underline-offset:4px}
+.reviews-action{margin-top:40px;text-align:center}
+.reviews-all{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:56px;padding:16px 28px;border:1px solid var(--review-olive);border-radius:999px;background:var(--review-olive);color:#FFFFFF;font-size:14px;font-weight:600;line-height:1.5;transition:background .22s ease,transform .22s ease}
+.reviews-all svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s ease}
+.reviews-all:hover{background:#54613D}
+.reviews-section a:focus-visible{outline:3px solid #8F563F;outline-offset:5px}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.review-card:hover{transform:translateY(-4px);background:#E6E9DF}.reviews-all:hover{transform:translateY(-1px)}.reviews-all:hover svg{transform:translateX(2px)}}
+@media(max-width:1099px){.reviews-section{padding-block:80px}.reviews-heading{font-size:56px}.reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.review-card{padding:28px}}
+@media(max-width:767px){.reviews-section{padding-block:64px;scroll-margin-top:16px}.reviews-header{margin-bottom:32px}.reviews-heading{font-size:40px;line-height:1.15}.reviews-grid{grid-template-columns:minmax(0,1fr);gap:16px}.review-card{padding:24px;min-height:0}.review-quote{margin:24px 0}.reviews-intro{max-width:30ch;margin-inline:auto}.reviews-action{margin-top:32px}.reviews-all{width:100%;padding-inline:20px}.reviews-rating{margin-top:12px}}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.button:active{scale:none}}
 
 </style>
@@ -240,7 +275,7 @@ h1 em{font-style:normal;font-weight:inherit}
   <nav class="desktop-nav" aria-label="Основное меню">
    <a href="./services.html">Услуги</a>
    <a href="#team">Pet-стилисты</a>
-   <a href="https://yandex.ru/maps/org/pyosduke/190293664931/reviews/" target="_blank" rel="noopener">Отзывы</a>
+   <a href="#reviews">Отзывы</a>
    <a href="https://yandex.ru/maps/org/pyosduke/190293664931/" target="_blank" rel="noopener">Контакты</a>
   </nav>
   <a class="button header-booking" href="https://n1254086.yclients.com/" target="_blank" rel="noopener">Записаться<span class="header-booking-extra">&nbsp;онлайн</span></a>
@@ -328,10 +363,64 @@ h1 em{font-style:normal;font-weight:inherit}
    </div>
   </div>
  </section>
+ <section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
+  <div class="reviews-shell">
+   <header class="reviews-header" data-reviews-reveal>
+    <h2 class="reviews-heading" id="reviews-title">Отзывы</h2>
+    <a class="reviews-rating" href="https://yandex.ru/maps/org/pyosduke/190293664931/reviews/" target="_blank" rel="noopener" aria-label="Рейтинг 5,0 на Яндекс Картах"><span class="reviews-rating-value">5,0</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><span>на&nbsp;Яндекс Картах</span></a>
+    <p class="reviews-intro">Фрагменты отзывов владельцев питомцев.</p>
+   </header>
+   <ul class="reviews-grid" aria-label="Шесть отзывов о Pes Duke">
+    <li class="review-item" data-reviews-reveal>
+     <article class="review-card" aria-labelledby="review-author-1">
+      <div class="review-meta"><span class="review-stars" role="img" aria-label="Оценка: 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg></span><time datetime="2026-06-10">10 июня 2026</time></div>
+      <blockquote class="review-quote" cite="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=62gknbur2z6mqhph6bed6b4trm"><p>… Огромное спасибо мастеру Кристине! Работала аккуратно и быстро, кошка не нервничала, хотя Брю обычно боится чужих. …</p></blockquote>
+      <footer class="review-author"><span class="review-initials" aria-hidden="true">ЕБ</span><div class="review-author-info"><h3 id="review-author-1">Елизавета Бедретдинова</h3><a class="review-source" href="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=62gknbur2z6mqhph6bed6b4trm" target="_blank" rel="noopener" aria-label="Оригинал отзыва: Елизавета Бедретдинова">Яндекс&nbsp;Карты<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19"/></svg></a></div></footer>
+     </article>
+    </li>
+    <li class="review-item" data-reviews-reveal>
+     <article class="review-card" aria-labelledby="review-author-2">
+      <div class="review-meta"><span class="review-stars" role="img" aria-label="Оценка: 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg></span><time datetime="2026-10-24">24 октября 2026</time></div>
+      <blockquote class="review-quote" cite="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=a73vca0bbuwwzaz4b6bkztyacc"><p>… Мастер Алина - богиня😍 огромная благодарность Алине за её мастерство, наш пёс был прекрасный, а после стрижки просто шедевр😍 …</p></blockquote>
+      <footer class="review-author"><span class="review-initials" aria-hidden="true">EP</span><div class="review-author-info"><h3 id="review-author-2">Ekaterina Pashinova</h3><a class="review-source" href="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=a73vca0bbuwwzaz4b6bkztyacc" target="_blank" rel="noopener" aria-label="Оригинал отзыва: Ekaterina Pashinova">Яндекс&nbsp;Карты<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19"/></svg></a></div></footer>
+     </article>
+    </li>
+    <li class="review-item" data-reviews-reveal>
+     <article class="review-card" aria-labelledby="review-author-3">
+      <div class="review-meta"><span class="review-stars" role="img" aria-label="Оценка: 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg></span><time datetime="2026-10-04">4 октября 2026</time></div>
+      <blockquote class="review-quote" cite="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=mwvepgcukkv94vgg0xey0mqtdm"><p>… Мы не пожалели! С первых минут Дарья нашла подход к собаке. …</p></blockquote>
+      <footer class="review-author"><span class="review-initials" aria-hidden="true">НК</span><div class="review-author-info"><h3 id="review-author-3">Наталья&nbsp;К.</h3><a class="review-source" href="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=mwvepgcukkv94vgg0xey0mqtdm" target="_blank" rel="noopener" aria-label="Оригинал отзыва: Наталья К.">Яндекс&nbsp;Карты<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19"/></svg></a></div></footer>
+     </article>
+    </li>
+    <li class="review-item" data-reviews-reveal>
+     <article class="review-card" aria-labelledby="review-author-4">
+      <div class="review-meta"><span class="review-stars" role="img" aria-label="Оценка: 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg></span><time datetime="2025-06-22">22 июня 2025</time></div>
+      <blockquote class="review-quote" cite="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=5fqr2kjw05d0hq6k2zjnj2kaug"><p>… Все очень доброжелательные, мастер Елена сразу нашла подход к моей кошке, процедура прошла спокойно. …</p></blockquote>
+      <footer class="review-author"><span class="review-initials" aria-hidden="true">ТЧ</span><div class="review-author-info"><h3 id="review-author-4">Таисия Черненко</h3><a class="review-source" href="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=5fqr2kjw05d0hq6k2zjnj2kaug" target="_blank" rel="noopener" aria-label="Оригинал отзыва: Таисия Черненко">Яндекс&nbsp;Карты<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19"/></svg></a></div></footer>
+     </article>
+    </li>
+    <li class="review-item" data-reviews-reveal>
+     <article class="review-card" aria-labelledby="review-author-5">
+      <div class="review-meta"><span class="review-stars" role="img" aria-label="Оценка: 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg></span><time datetime="2026-07-10">10 июля 2026</time></div>
+      <blockquote class="review-quote" cite="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=jhd7dh2wzzhfr7ekpmd9vv03fw"><p>… Все мастера отличные, стриглись почти у всех. Всегда учитывают пожелания. Очень чисто и стильно. …</p></blockquote>
+      <footer class="review-author"><span class="review-initials" aria-hidden="true">ЕШ</span><div class="review-author-info"><h3 id="review-author-5">Елена&nbsp;Ш</h3><a class="review-source" href="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=jhd7dh2wzzhfr7ekpmd9vv03fw" target="_blank" rel="noopener" aria-label="Оригинал отзыва: Елена Ш">Яндекс&nbsp;Карты<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19"/></svg></a></div></footer>
+     </article>
+    </li>
+    <li class="review-item" data-reviews-reveal>
+     <article class="review-card" aria-labelledby="review-author-6">
+      <div class="review-meta"><span class="review-stars" role="img" aria-label="Оценка: 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9z"/></svg></span><time datetime="2025-06-25">25 июня 2025</time></div>
+      <blockquote class="review-quote" cite="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=1hz78akdp3r4zncbfkpa6x0u74"><p>… Всегда учитывают все пожелания по стрижке, в случае чего без вопросов корректируют) Очень внимательно и аккуратно относятся к питомцам. …</p></blockquote>
+      <footer class="review-author"><span class="review-initials" aria-hidden="true">АФ</span><div class="review-author-info"><h3 id="review-author-6">Анастасия Фёдорова</h3><a class="review-source" href="https://yandex.ru/maps/org/190293664931/reviews?reviews%5BpublicId%5D=1hz78akdp3r4zncbfkpa6x0u74" target="_blank" rel="noopener" aria-label="Оригинал отзыва: Анастасия Фёдорова">Яндекс&nbsp;Карты<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19"/></svg></a></div></footer>
+     </article>
+    </li>
+   </ul>
+   <div class="reviews-action" data-reviews-reveal><a class="reviews-all" href="https://yandex.ru/maps/org/pyosduke/190293664931/reviews/" target="_blank" rel="noopener">Смотреть все&nbsp;отзывы<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+  </div>
+ </section>
 </main>
 <dialog class="mobile-menu" id="mobile-menu" aria-label="Меню Pes Duke">
  <div class="menu-top"><a class="brand" href="./index.html" aria-label="Pes Duke — на главную"><img src="assets/logo-v2.webp" width="600" height="267" alt="Pes Duke"></a><button class="close-menu" type="button" aria-label="Закрыть меню"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
- <nav class="mobile-nav" aria-label="Мобильное меню"><a href="./services.html">Услуги</a><a href="#team">Pet-стилисты</a><a href="https://yandex.ru/maps/org/pyosduke/190293664931/reviews/" target="_blank" rel="noopener">Отзывы</a><a href="https://yandex.ru/maps/org/pyosduke/190293664931/" target="_blank" rel="noopener">Контакты</a><a href="tel:+79175556617">+7 917 555-66-17</a></nav>
+ <nav class="mobile-nav" aria-label="Мобильное меню"><a href="./services.html">Услуги</a><a href="#team">Pet-стилисты</a><a href="#reviews">Отзывы</a><a href="https://yandex.ru/maps/org/pyosduke/190293664931/" target="_blank" rel="noopener">Контакты</a><a href="tel:+79175556617">+7 917 555-66-17</a></nav>
  <a class="button" href="https://n1254086.yclients.com/" target="_blank" rel="noopener">ЗАПИСАТЬСЯ ОНЛАЙН</a>
 </dialog>
 <script>
@@ -417,10 +506,11 @@ h1 em{font-style:normal;font-weight:inherit}
  teamTrack.addEventListener('keydown',event=>{if(event.target!==teamTrack)return;if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();moveTeam(event.key==='ArrowRight'?1:-1);}});
  new ResizeObserver(updateTeamNavigation).observe(teamTrack);
  updateTeamNavigation();
- let teamMotionReady=false;
- function initTeamMotion(){
-  if(teamMotionReady||!window.gsap)return;
-  teamMotionReady=true;
+ let sectionMotionReady=false;
+ function initSectionMotion(){
+  if(sectionMotionReady||!window.gsap)return;
+  sectionMotionReady=true;
+  const scrollTargets='[data-team-reveal],[data-reviews-reveal]';
   const revealed=new WeakSet();
   const activeTweens=new Set();
   let observer;
@@ -428,11 +518,11 @@ h1 em{font-style:normal;font-weight:inherit}
    if(observer)observer.disconnect();
    if(reducedMotion.matches){
     activeTweens.forEach(tween=>{tween.progress(1);tween.kill();});activeTweens.clear();
-    gsap.set('[data-team-reveal]',{clearProps:'transform,opacity,visibility'});
-    document.querySelector('#team').dataset.motion='reduced';
+    gsap.set(scrollTargets,{clearProps:'transform,opacity,visibility'});
+    document.querySelectorAll('#team,#reviews').forEach(section=>section.dataset.motion='reduced');
     return;
    }
-   document.querySelector('#team').dataset.motion='gsap';
+   document.querySelectorAll('#team,#reviews').forEach(section=>section.dataset.motion='gsap');
    observer=new IntersectionObserver(entries=>{
     const entering=entries.filter(entry=>entry.isIntersecting&&!revealed.has(entry.target)).map(entry=>entry.target);
     if(!entering.length)return;
@@ -440,7 +530,7 @@ h1 em{font-style:normal;font-weight:inherit}
     const tween=gsap.fromTo(entering,{y:20,opacity:0},{y:0,opacity:1,duration:.7,stagger:.12,ease:'power2.out',clearProps:'transform,opacity',onComplete:()=>activeTweens.delete(tween)});
     activeTweens.add(tween);
    },{threshold:.18});
-   document.querySelectorAll('[data-team-reveal]').forEach(el=>{if(!revealed.has(el))observer.observe(el);});
+   document.querySelectorAll(scrollTargets).forEach(el=>{if(!revealed.has(el))observer.observe(el);});
   }
   reducedMotion.addEventListener('change',observeTeam);
   observeTeam();
@@ -448,7 +538,7 @@ h1 em{font-style:normal;font-weight:inherit}
 
  let introPlayed=false;
  window.pesDukeIntro=() => {
-  initTeamMotion();
+  initSectionMotion();
   if(introPlayed||!window.gsap)return;
   introPlayed=true;
   const reveal=()=>document.documentElement.classList.remove('intro-pending');
